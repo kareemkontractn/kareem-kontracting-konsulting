@@ -44,11 +44,18 @@
     textarea{min-height:140px;resize:vertical}
     .notice{background:#fff7ed;border:1px solid #fdba74;border-radius:14px;padding:14px;color:#7c2d12}
     .result{margin-top:12px;padding:12px 14px;border-radius:12px;background:#ecfeff;color:#155e75;display:none}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+    .step{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px}
+    .step-num{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;background:#f59e0b;color:#111827;margin-bottom:10px}
+    .step h3{margin:0 0 6px;font-size:1rem}
+    .step p{margin:0;color:#475569;font-size:.93rem}
+    .status-note{background:#eff6ff;border:1px solid #93c5fd;border-radius:14px;padding:14px;color:#1e3a8a;margin-bottom:22px}
     footer{background:var(--bg);color:var(--muted);padding:34px 0 46px}
     footer strong{color:white}
     ul.clean{padding-left:20px;margin:8px 0 0}
     @media(max-width:760px){
       .grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
       header{padding-bottom:44px}
       .hero{padding-top:42px}
       .actions .btn{width:100%}
@@ -178,8 +185,45 @@
 
     <section id="request">
       <div class="wrap">
-        <h2>Request help</h2>
-        <p class="lead">Fill this out on your phone. The site can copy or share the request so you can send it using the app you prefer.</p>
+        <h2>Start a request</h2>
+        <p class="lead">Your order follows a clear step-by-step process, similar to an e-filing checkout.</p>
+
+        <div class="steps" aria-label="Order steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Document Details</h3>
+            <p>Name the document or request and tell us what you need done.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Secure Upload</h3>
+            <p>Add the document to a protected temporary holding area.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Select Service</h3>
+            <p>Choose proofreading, preparation, formatting, filing assistance, resume help, or another available service.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Review</h3>
+            <p>Confirm the document, requested service, instructions, and price before payment.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <h3>Payment</h3>
+            <p>Select a payment method and complete payment securely.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <h3>Submit</h3>
+            <p>The order becomes submitted only after successful payment, then the documents enter the work queue.</p>
+          </div>
+        </div>
+
+        <div class="status-note">
+          Secure document upload and payment processing are being connected. Until those are active, this form collects request details only and does not transmit documents or payment information.
+        </div>
 
         <div class="card">
           <form id="requestForm">
